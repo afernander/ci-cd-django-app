@@ -5,6 +5,7 @@ phases:
     runtime-versions:
       python: 3.8
     commands:
+      - python -m pip install --upgrade pip
       - pip install virtualenv
       - pip install coverage
       - python -m virtualenv env
@@ -12,7 +13,6 @@ phases:
       - pip install coverage
       - pip install db-sqlite3
       - pip install pysqlite3
-      - pip install pysqlite
       - pip install -r requirements.txt
   build:
     commands:

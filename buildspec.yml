@@ -12,7 +12,6 @@ phases:
       - pip install coverage
       - pip install db-sqlite3
       - pip install pysqlite3
-      - pip install sqlite
       - pip install pysqlite
       - pip install -r requirements.txt
   build:

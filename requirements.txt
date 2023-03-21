@@ -1,7 +1,7 @@
 asgiref==3.6.0
 coverage==7.2.2
 DateTime==5.1
-Django==4.1.7
+Django==3.2.18
 django-coverage-plugin==3.0.0
 pytz==2022.7.1
 sqlparse==0.4.3

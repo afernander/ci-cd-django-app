@@ -11,7 +11,7 @@ phases:
       - source env/bin/activate
       - pip install coverage
       - pip install db-sqlite3
-      - pip install install pysqlite3
+      - pip install pysqlite3
       - pip install -r requirements.txt
   build:
     commands:

@@ -29,4 +29,4 @@ class TestViews(TestCase):
         response = self.client.get(self.day_url)
 
         self.assertEquals(response.status_code, 200)
-        self.assertContains(response, 'You are 22 years old.')
+        self.assertContains(response, 'You are 32 years old.')

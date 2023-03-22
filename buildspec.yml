@@ -12,6 +12,7 @@ phases:
       - pip install coverage
       - pip install db-sqlite3
       - pip install pysqlite3
+      - pip install --upgrade pysqlite3-binary
       - pip install -r requirements.txt
   build:
     commands:

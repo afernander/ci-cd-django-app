@@ -11,6 +11,8 @@ def welcome(request):
     <ul>
         <li>Go to the /hi/name page to say hi to your name.</li>
         <li>Go to the /day/date page to get your age. Format AAAA-MM-DD, example: /day/1990-12-26 </li>
+        <li>Go to the /compare/:date/:date1 page to compare in years the two ages. Format AAAA-MM-DD, example: /day/1990-12-26 </li>
+        <li>Go to the /greather/:date/:date1 page to get the greather age of two birthdays. Format AAAA-MM-DD, example: /day/1990-12-26 </li>
     </ul>
     '''
     return HttpResponse(instructions)

@@ -15,11 +15,13 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from hi.views import welcome, hi, day 
+from hi.views import welcome, hi, day, compareAge, greatherAge
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', welcome, name='welcome'),
     path('hi/<name>', hi, name ='hi'),
     path('day/<date>', day, name ='day'),
+    path('compare/<date>/<date2>',compareAge, name= 'compareAge'),
+    path('greather/<date>/<date2>', greatherAge, name='greatherAge')
 ]

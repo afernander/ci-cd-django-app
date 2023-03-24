@@ -18,7 +18,9 @@ phases:
   build:
     commands:
       - echo "build"
+      - python manage.py collectstatic --noinput
   post_build:
     commands:
-      - echo "Build complete"
+      # Deploy to Elastic Beanstalk
+      - eb init -p python-3.7 <your-application-name> --region <your-region>
 

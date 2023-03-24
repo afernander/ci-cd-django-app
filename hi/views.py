@@ -23,3 +23,18 @@ def day(request, date):
     today = datetime.now()
     age = today - date
     return HttpResponse("You are " + str(age.days//365) + " years old.")
+
+def compareAge(request, date, date2):
+    date = datetime.strptime(date, '%Y-%m-%d')
+    date2 = datetime.strptime(date2, '%Y-%m-%d')
+    age = date - date2
+    return HttpResponse("The difference of age is " + str(age.days//365) + " years.")
+
+def greatherAge (request, date, date2):
+    date = datetime.strptime(date, '%Y-%m-%d')
+    date2 = datetime.strptime(date2, '%Y-%m-%d')
+    age = date - date2
+    if age.days//365 < 0:
+        return HttpResponse("The greather age is " + str(date) + " years.")
+    else:
+        return HttpResponse("The greather age is " + str(date2) + " years.")

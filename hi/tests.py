@@ -10,6 +10,8 @@ class TestViews(TestCase):
         self.welcome_url = reverse('welcome')
         self.hi_url = reverse('hi', args=['John'])
         self.day_url = reverse('day', args=['1990-12-26'])
+        self.compare_url = reverse('compareAge', args=['2001-01-01', '2000-01-01'])
+        self.greather_url = reverse('greatherAge', args=['1989-12-26', '1990-12-26'])
     
     def test_welcome(self):
         response = self.client.get(self.welcome_url)
@@ -30,3 +32,15 @@ class TestViews(TestCase):
 
         self.assertEquals(response.status_code, 200)
         self.assertContains(response, 'You are 32 years old.')
+        
+    def test_compareAge(self):
+        response = self.client.get(self.compare_url)
+
+        self.assertEquals(response.status_code, 200)
+        self.assertContains(response, 'The difference of age is 1 years.')
+        
+    def test_greatherAge(self):
+        response = self.client.get(self.greather_url)
+       
+        self.assertEquals(response.status_code, 200)
+        self.assertContains(response, 'The greather age is 1989-12-26 00:00:00 years.')

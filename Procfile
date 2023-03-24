@@ -1,0 +1,1 @@
+web: gunicorn CI-CD-DJANGO-APP.myapp.wsgi

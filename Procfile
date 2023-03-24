@@ -1,1 +1,1 @@
-web: gunicorn CI-CD-DJANGO-APP.myapp.wsgi
+web: gunicorn myapp.wsgi

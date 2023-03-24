@@ -38,3 +38,11 @@ jobs:
     - name: Check Coverage
       run: |
        coverage report --fail-under=80
+       - name: Deploy to Heroku
+    env:
+      HEROKU_API_KEY: ${{ secrets.HEROKU_API_KEY }}
+      run: |
+        curl https://cli-assets.heroku.com/install.sh | sh
+        heroku login -i
+        heroku git:remote -a python-app-ci-cd
+        git push heroku master

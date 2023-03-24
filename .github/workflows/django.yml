@@ -38,13 +38,3 @@ jobs:
     - name: Check Coverage
       run: |
        coverage report --fail-under=80
-    - name: Deploy to Heroku
-      uses: akhileshns/heroku-deploy@v3.12.12
-      with:
-        heroku_api_key: ${{ secrets.HEROKU_API_KEY }}
-        heroku_app_name: "python-app-ci-cd"
-        heroku_email: "alejoferna2301@gmail.com"
-        branch: "master"
-        buildpack: "heroku/python"
-        extra: |
-          python manage.py collectstatic --noinput

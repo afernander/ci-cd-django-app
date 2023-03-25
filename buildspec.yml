@@ -26,6 +26,5 @@ phases:
       - coverage report --fail-under=70
   post_build:
     commands:
-      # Deploy to Elastic Beanstalk
       - eb init -p python-3.7 python-app --region us-ohio
 

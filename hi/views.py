@@ -40,3 +40,44 @@ def greatherAge (request, date, date2):
         return HttpResponse("The greather age is " + str(date) + " years.")
     else:
         return HttpResponse("The greather age is " + str(date2) + " years.")
+    
+def signo_zodiacal(request, day, month):
+    """
+    Esta función toma como argumentos el día y el month de nacimiento de una persona,
+    y devuelve su signo zodiacal.
+    """
+    day = int(day)
+    month = int(month)
+    # Comprobamos que los argumentos son válidos
+    if not isinstance(day, int) or not isinstance(month, int):
+        raise TypeError("Los argumentos deben ser enteros.")
+    if month < 1 or month > 12 or day < 1 or day > 31:
+        raise ValueError("La fecha ingresada no es válida.")
+    # calculate all zodiacal sign
+    if (month == 1 and day >= 21) or (month == 2 and day <= 19):
+        return HttpResponse("Acuario")
+    elif (month == 2 and day >= 20) or (month == 3 and day <= 20):
+        return HttpResponse("Piscis")
+    elif (month == 3 and day >= 21) or (month == 4 and day <= 20):
+        return HttpResponse("Aries")
+    elif (month == 4 and day >= 21) or (month == 5 and day <= 21):
+        #return
+        return HttpResponse("Tauro")
+    elif (month == 5 and day >= 22) or (month == 6 and day <= 21):
+        return HttpResponse("Géminis")
+    elif (month == 6 and day >= 22) or (month == 7 and day <= 22):
+        return HttpResponse("Cáncer")
+    elif (month == 7 and day >= 23) or (month == 8 and day <= 23):
+        return HttpResponse("Leo")
+    elif (month == 8 and day >= 24) or (month == 9 and day <= 23):
+        return HttpResponse("Virgo")
+    elif (month == 9 and day >= 24) or (month == 10 and day <= 23):
+        return HttpResponse("Libra")
+    elif (month == 10 and day >= 24) or (month == 11 and day <= 22):
+        return HttpResponse("Escorpio")
+    elif (month == 11 and day >= 23) or (month == 12 and day <= 21):
+        return HttpResponse("Sagitario")
+    elif (month == 12 and day >= 22) or (month == 1 and day <= 20):
+        return HttpResponse("Capricornio")
+    else:
+        return HttpResponse("Fecha no válida")

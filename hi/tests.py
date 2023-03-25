@@ -12,6 +12,7 @@ class TestViews(TestCase):
         self.day_url = reverse('day', args=['1990-12-26'])
         self.compare_url = reverse('compareAge', args=['2001-01-01', '2000-01-01'])
         self.greather_url = reverse('greatherAge', args=['1989-12-26', '1990-12-26'])
+        self.start_sign_url = reverse('star_sign', args=[19,1])
     
     def test_welcome(self):
         response = self.client.get(self.welcome_url)
@@ -44,3 +45,9 @@ class TestViews(TestCase):
        
         self.assertEquals(response.status_code, 200)
         self.assertContains(response, 'The greather age is 1989-12-26 00:00:00 years.')
+        
+    def test_start_sign(self):
+        response = self.client.get(self.start_sign_url)
+        
+        self.assertEquals(response.status_code, 200)
+        self.assertContains(response, 'Capricornio')

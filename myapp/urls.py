@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from hi.views import welcome, hi, day, compareAge, greatherAge
+from hi.views import welcome, hi, day, compareAge, greatherAge, signo_zodiacal
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -23,5 +23,6 @@ urlpatterns = [
     path('hi/<name>', hi, name ='hi'),
     path('day/<date>', day, name ='day'),
     path('compare/<date>/<date2>',compareAge, name= 'compareAge'),
-    path('greather/<date>/<date2>', greatherAge, name='greatherAge')
+    path('greather/<date>/<date2>', greatherAge, name='greatherAge'),
+    path('star/sign/<day>/<month>', signo_zodiacal, name='star_sign')
 ]

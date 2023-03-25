@@ -6,7 +6,7 @@ from datetime import datetime
 def welcome(request):
     #with dinamic date with form
     instructions = '''
-    <h1>Welcome to the python CI/CD testing app!</h1>
+    <h1>Welcome to the CI/CD testing app!</h1>
     <p>Here are some instructions:</p>
     <ul>
         <li>Go to the /hi/name page to say hi to your name.</li>

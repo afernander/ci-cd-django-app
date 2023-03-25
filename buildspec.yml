@@ -13,14 +13,16 @@ phases:
       - pip install coverage
       - pip install db-sqlite3
       - pip install pysqlite3
-      - pip install pysqlite3-binary
       - pip install -r requirements.txt
   build:
     commands:
       - echo "build"
+      - python manage.py makemigrations
+      - python manage.py runserver
+      - python manage.py test
       - python manage.py collectstatic --noinput
   post_build:
     commands:
       # Deploy to Elastic Beanstalk
-      - eb init -p python-3.7 <your-application-name> --region <your-region>
+      - eb init -p python-3.7 python-app --region us-ohio
 

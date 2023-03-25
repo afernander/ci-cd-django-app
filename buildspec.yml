@@ -21,6 +21,9 @@ phases:
       - python manage.py runserver
       - python manage.py test
       - python manage.py collectstatic --noinput
+      - coverage run --source='.' manage.py test
+      - coverage report
+      - coverage report --fail-under=70
   post_build:
     commands:
       # Deploy to Elastic Beanstalk

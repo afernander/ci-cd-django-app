@@ -13,6 +13,7 @@ def welcome(request):
         <li>Go to the /day/date page to get your age. Format AAAA-MM-DD, example: /day/1990-12-26 </li>
         <li>Go to the /compare/:date/:date1 page to compare in years the two ages. Format AAAA-MM-DD, example: /day/1990-12-26 </li>
         <li>Go to the /greather/:date/:date1 page to get the greather age of two birthdays. Format AAAA-MM-DD, example: /day/1990-12-26 </li>
+        <li>Go to the /star_sign/:day/:month page to get the star sign of a birthday. Format DD/MM, example: /day/19/01 </li>
     </ul>
     '''
     return HttpResponse(instructions)
